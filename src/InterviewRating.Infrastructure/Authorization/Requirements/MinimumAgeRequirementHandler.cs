@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace InterviewRating.Infrastructure.Authorization.Requirements;
 
-internal class MinimumAgeRequirementHandler(
+public class MinimumAgeRequirementHandler(
     ILogger<MinimumAgeRequirementHandler> logger,
     IUserContext userContext
     ) : AuthorizationHandler<MinimumAgeRequirement>
