@@ -22,10 +22,6 @@ public class CreateWorkExperienceCommandValidator : AbstractValidator<CreateWork
         RuleFor(dto => dto.CompanyName)
             .MaximumLength(255);
 
-        RuleFor(dto => dto.Responsibilities)
-            .Must(rule => rule.Length < 5)
-            .WithMessage("Responsibilities must not be over than 5");
-
         RuleFor(dto => dto.Country)
             .Must(validCountries.Contains)
             .WithMessage($"Country must be one of these values {string.Join(", ", validCountries)}");

@@ -13,10 +13,6 @@ public class CreateReviewRequestValidator : AbstractValidator<CreateReviewReques
         RuleFor(dto => dto.CompanyName)
             .Length(3, 255);
 
-        RuleFor(dto => dto.Feedback)
-            .Length(50, 255)
-            .WithMessage("Feedback must be at least 50 characters long");
-
         RuleFor(dto => dto.CompanyRepresentativeEmail)
             .EmailAddress();
     }
